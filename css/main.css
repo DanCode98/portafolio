@@ -28,7 +28,6 @@ body {
     padding: 0 20px;
 }
 
-/* Header */
 header {
     background-color: var(--primary-color);
     color: var(--text-light);
@@ -81,7 +80,6 @@ nav {
     cursor: pointer;
 }
 
-/* Hero Section */
 .hero {
     height: 100vh;
     display: flex;
@@ -89,6 +87,8 @@ nav {
     background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
     color: var(--text-light);
     padding-top: 80px;
+    position: relative;
+    overflow: hidden;
 }
 
 .hero-content {
@@ -139,7 +139,6 @@ nav {
     background-color: var(--secondary-color);
 }
 
-/* About Section */
 .section {
     padding: 6rem 0;
 }
@@ -212,19 +211,14 @@ nav {
     font-weight: 500;
 }
 
-/* Stack Section */
 .stack {
     background-color: var(--light-color);
 }
 
 .stack-container {
-    /* display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem; */
     max-width: 100%;
     padding: 0 2vw;
 }
-
 
 .stack-category {
     background-color: white;
@@ -266,7 +260,6 @@ nav {
     margin-right: 0.5rem;
 }
 
-/* Projects Section */
 .projects-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -354,7 +347,6 @@ nav {
     margin-right: 0.3rem;
 }
 
-/* Contact Section */
 .contact {
     background-color: var(--light-color);
 }
@@ -454,7 +446,6 @@ nav {
     resize: vertical;
 }
 
-/* Footer */
 footer {
     background-color: var(--primary-color);
     color: var(--text-light);
@@ -487,7 +478,6 @@ footer p {
     color: var(--secondary-color);
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     .nav-links {
         position: fixed;
@@ -527,7 +517,6 @@ footer p {
     }
 }
 
-/* Animations */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -556,7 +545,6 @@ footer p {
     animation-delay: 0.6s;
 }
 
-/* Animated console */
 .title {
     margin-bottom: 4rem;
     text-align: center;
@@ -566,7 +554,6 @@ footer p {
 
 .main .about-me {
     padding-top: 1.5rem;
-    /* background: #ffffff; */
     color: #000000;
     margin-bottom: 1.5rem;
 }
@@ -576,7 +563,6 @@ footer p {
     background: var(--console-bg);
     color: white;
     font-family: console, monospace, Arial;
-
     min-height: 27.5rem;
     margin: 0 auto;
     border-radius: 0.625rem;
@@ -607,7 +593,6 @@ footer p {
     margin: 0 auto;
 }
 
-/* Badges styles*/
 .skill-badges {
     display: flex;
     flex-wrap: wrap;
@@ -615,7 +600,8 @@ footer p {
     margin-top: 0.5rem;
 }
 
-.badge {
+.badge,
+.filter-btn {
     display: inline-block;
     padding: 0.3em 0.9em;
     font-size: 0.95em;
@@ -633,22 +619,12 @@ footer p {
     background: #e1e4e8;
 }
 
-/* Stack section*/
 .tech-filter {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
     margin-bottom: 2rem;
     justify-content: center;
-}
-
-.filter-btn {
-    padding: 0.5rem 1rem;
-    background: #f0f0f0;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: all 0.3s;
 }
 
 .filter-btn.active {
@@ -720,20 +696,35 @@ footer p {
 .tech-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    /* Cambia 220px por 250px o el valor que prefieras */
     gap: 1.5rem;
     width: 100%;
     justify-items: center;
-    /* Centra las tarjetas si hay menos columnas */
     align-items: stretch;
-    /* Puedes agregar un max-width si quieres limitar el ancho total */
-    /* max-width: 1100px; */
-    /* margin: 0 auto; */
 }
 
 .tech-card {
     width: 400px;
-    /* Fija el ancho de cada tarjeta */
     max-width: 100%;
-    /* ...resto de estilos... */
+}
+
+#matrix-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    opacity: 0.18;
+    pointer-events: none;
+}
+
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero .container,
+.hero-content {
+    position: relative;
+    z-index: 1;
 }

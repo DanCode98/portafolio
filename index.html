@@ -28,9 +28,10 @@
         </div>
     </header>
     <section id="home" class="hero">
+        <canvas id="matrix-bg"></canvas>
         <div class="container">
             <div class="hero-content fade-in">
-                <h1>Hola, soy <span>Daniel de la Rosa</span></h1>
+                <h1>Hola, soy <span id="coder-name">Daniel de la Rosa</span></h1>
                 <p>Desarrollador Fullstack con más de 2 años de experiencia creando soluciones web y de escritorio que
                     resuelven problemas reales, automatizan procesos y elevan el rendimiento operativo.</p>
                 <div>
@@ -104,7 +105,7 @@
 
     <section id="stack" class="section stack">
         <div class="container">
-            <h2 class="section-title">Mi <span>Stack</span></h2>
+            <h2 class="section-title">Mi <span>Stack</span> Técnico</h2>
         </div>
         <div class="stack-container">
             <div class="container">
@@ -113,7 +114,7 @@
                     <button class="filter-btn" data-filter="frontend">Frontend</button>
                     <button class="filter-btn" data-filter="backend">Backend</button>
                     <button class="filter-btn" data-filter="database">Bases de Datos</button>
-                    <button class="filter-btn" data-filter="devops">DevOps</button>
+                    <button class="filter-btn" data-filter="devops">DevOps y Otras Herramientas</button>
                 </div>
             </div>
 
@@ -127,7 +128,6 @@
                     <h3>HTML5</h3>
                     <div class="tech-info">
                         <p>Experiencia avanzada en estructura semántica y accesibilidad.</p>
-                        <div class="tech-projects">Usado en 15+ proyectos</div>
                     </div>
                 </div>
                 <!-- JS -->
@@ -141,7 +141,7 @@
                     <h3>JavaScript</h3>
                     <div class="tech-info">
                         <p>Dominio de ES6+, patrones de diseño, programación asíncrona y manipulación del DOM.</p>
-                        <div class="tech-projects">Usado en 25+ proyectos</div>
+
                     </div>
                 </div>
 
@@ -155,7 +155,7 @@
                     <div class="tech-info">
                         <p>Experiencia en simplificación de manipulación DOM y peticiones asíncronas para aplicaciones
                             legacy.</p>
-                        <div class="tech-projects">Usado en 15 proyectos</div>
+
                     </div>
                 </div>
 
@@ -167,7 +167,7 @@
                     <h3>CSS</h3>
                     <div class="tech-info">
                         <p>Maquetación avanzada, Flexbox, Grid, animaciones y diseño responsive.</p>
-                        <div class="tech-projects">Usado en todos los proyectos frontend</div>
+
                     </div>
                 </div>
 
@@ -184,19 +184,6 @@
                     </div>
                 </div>
 
-                <!-- Express.js -->
-                <div class="tech-card" data-category="backend">
-                    <div class="tech-logo">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
-                            alt="Express.js">
-                    </div>
-                    <h3>Express.js</h3>
-                    <div class="tech-info">
-                        <p>Creación de APIs RESTful con middleware personalizado y gestión de rutas.</p>
-                        <div class="tech-projects">Usado en 10 proyectos</div>
-                    </div>
-                </div>
-
                 <!-- ElectronJS -->
                 <div class="tech-card" data-category="backend">
                     <div class="tech-logo">
@@ -206,7 +193,6 @@
                     <h3>ElectronJS</h3>
                     <div class="tech-info">
                         <p>Desarrollo de aplicaciones desktop multiplataforma con tecnologías web.</p>
-                        <div class="tech-projects">Usado en 3 proyectos</div>
                     </div>
                 </div>
 
@@ -218,8 +204,8 @@
                     </div>
                     <h3>Python</h3>
                     <div class="tech-info">
-                        <p>Scripting, automatización y desarrollo backend con enfoque en productividad.</p>
-                        <div class="tech-projects">Usado en 8 proyectos</div>
+                        <p>Scripting, automatización y desarrollo backend con enfoque en productividad. Usado en
+                            conjunto con PyQT para desarrollo de aplicaciones de escritorio a medida del cliente.</p>
                     </div>
                 </div>
 
@@ -232,7 +218,6 @@
                     <h3>Flask</h3>
                     <div class="tech-info">
                         <p>Desarrollo de microservicios y APIs ligeras con arquitectura modular.</p>
-                        <div class="tech-projects">Usado en 5 proyectos</div>
                     </div>
                 </div>
 
@@ -245,7 +230,6 @@
                     <h3>PyQT</h3>
                     <div class="tech-info">
                         <p>Creación de interfaces gráficas para aplicaciones de escritorio en Python.</p>
-                        <div class="tech-projects">Usado en 4 proyectos</div>
                     </div>
                 </div>
 
@@ -257,7 +241,6 @@
                     <h3>PHP</h3>
                     <div class="tech-info">
                         <p>Desarrollo de aplicaciones web del lado del servidor con enfoque en CMS.</p>
-                        <div class="tech-projects">Usado en 7 proyectos</div>
                     </div>
                 </div>
 
@@ -269,7 +252,6 @@
                     <h3>Java</h3>
                     <div class="tech-info">
                         <p>Desarrollo de aplicaciones empresariales con patrones OOP sólidos.</p>
-                        <div class="tech-projects">Usado en 6 proyectos</div>
                     </div>
                 </div>
 
@@ -281,8 +263,7 @@
                     </div>
                     <h3>Spring Boot</h3>
                     <div class="tech-info">
-                        <p>Creación de microservicios y APIs robustas con convención sobre configuración.</p>
-                        <div class="tech-projects">Usado en 4 proyectos</div>
+                        <p>Creación de microservicios y APIs con convención sobre configuración.</p>
                     </div>
                 </div>
 
@@ -295,7 +276,6 @@
                     <h3>MySQL</h3>
                     <div class="tech-info">
                         <p>Diseño de bases de datos relacionales, optimización de queries y stored procedures.</p>
-                        <div class="tech-projects">Usado en 18 proyectos</div>
                     </div>
                 </div>
 
@@ -309,7 +289,6 @@
                     <div class="tech-info">
                         <p>Implementación de bases de datos avanzadas con soporte para JSON y funciones personalizadas.
                         </p>
-                        <div class="tech-projects">Usado en 9 proyectos</div>
                     </div>
                 </div>
 
@@ -322,7 +301,6 @@
                     <h3>SQLite</h3>
                     <div class="tech-info">
                         <p>Uso en aplicaciones móviles y sistemas embebidos por su ligereza y portabilidad.</p>
-                        <div class="tech-projects">Usado en 5 proyectos</div>
                     </div>
                 </div>
 
@@ -335,7 +313,6 @@
                     <h3>MariaDB</h3>
                     <div class="tech-info">
                         <p>Alternativa open-source a MySQL con optimizaciones específicas para cargas altas.</p>
-                        <div class="tech-projects">Usado en 4 proyectos</div>
                     </div>
                 </div>
 
@@ -347,7 +324,6 @@
                     <h3>Git</h3>
                     <div class="tech-info">
                         <p>Control de versiones avanzado con branching strategies y resolución de conflictos.</p>
-                        <div class="tech-projects">Usado en todos los proyectos</div>
                     </div>
                 </div>
 
@@ -360,7 +336,6 @@
                     <h3>GitHub</h3>
                     <div class="tech-info">
                         <p>Gestión de repositorios, CI/CD con Actions y colaboración en equipos distribuidos.</p>
-                        <div class="tech-projects">Usado en 30+ proyectos</div>
                     </div>
                 </div>
 
@@ -373,7 +348,6 @@
                     <h3>Bitbucket</h3>
                     <div class="tech-info">
                         <p>Integración con JIRA y pipelines para entornos empresariales.</p>
-                        <div class="tech-projects">Usado en 5 proyectos</div>
                     </div>
                 </div>
 
@@ -386,7 +360,6 @@
                     <h3>Postman</h3>
                     <div class="tech-info">
                         <p>Pruebas automatizadas de APIs, colecciones compartidas y documentación.</p>
-                        <div class="tech-projects">Usado en 15 proyectos</div>
                     </div>
                 </div>
 
@@ -398,33 +371,18 @@
                     <h3>JIRA</h3>
                     <div class="tech-info">
                         <p>Gestión ágil de proyectos con SCRUM y tableros Kanban personalizados.</p>
-                        <div class="tech-projects">Usado en 8 proyectos</div>
                     </div>
                 </div>
 
                 <!-- AWS -->
                 <div class="tech-card" data-category="devops">
                     <div class="tech-logo">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg"
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-line-wordmark.svg"
                             alt="AWS">
                     </div>
                     <h3>AWS</h3>
                     <div class="tech-info">
-                        <p>Despliegue en EC2, S3, RDS y Lambda para arquitecturas escalables.</p>
-                        <div class="tech-projects">Usado en 6 proyectos</div>
-                    </div>
-                </div>
-
-                <!-- Docker -->
-                <div class="tech-card" data-category="devops">
-                    <div class="tech-logo">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
-                            alt="Docker">
-                    </div>
-                    <h3>Docker</h3>
-                    <div class="tech-info">
-                        <p>Contenerización de aplicaciones y entornos de desarrollo consistentes.</p>
-                        <div class="tech-projects">Usado en 7 proyectos</div>
+                        <p>Despliegue en EC2 para arquitecturas escalables.</p>
                     </div>
                 </div>
 
@@ -436,8 +394,7 @@
                     </div>
                     <h3>Linux (Ubuntu)</h3>
                     <div class="tech-info">
-                        <p>Administración de servidores, scripting Bash y configuración de entornos.</p>
-                        <div class="tech-projects">Usado en todos los proyectos backend</div>
+                        <p>Administración de servidores y configuración de entornos.</p>
                     </div>
                 </div>
 
@@ -450,7 +407,6 @@
                     <h3>VS Code</h3>
                     <div class="tech-info">
                         <p>Configuración avanzada de entornos de desarrollo con extensiones personalizadas.</p>
-                        <div class="tech-projects">Editor principal en 20+ proyectos</div>
                     </div>
                 </div>
 
@@ -463,20 +419,18 @@
                     <h3>IntelliJ</h3>
                     <div class="tech-info">
                         <p>IDE principal para desarrollo Java/Spring con integraciones avanzadas.</p>
-                        <div class="tech-projects">Usado en 6 proyectos</div>
                     </div>
                 </div>
 
                 <!-- VirtualBox -->
                 <div class="tech-card" data-category="devops">
                     <div class="tech-logo">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/virtualbox/virtualbox-original.svg"
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg"
                             alt="VirtualBox">
                     </div>
                     <h3>VirtualBox</h3>
                     <div class="tech-info">
                         <p>Creación de entornos aislados para pruebas y desarrollo multi-plataforma.</p>
-                        <div class="tech-projects">Usado en 5 proyectos</div>
                     </div>
                 </div>
 
@@ -490,20 +444,6 @@
                     <h3>Vue.js</h3>
                     <div class="tech-info">
                         <p>Desarrollo de SPA con Vue 2 y 3, Vuex y Vue Router.</p>
-                        <div class="tech-projects">Usado en 8 proyectos</div>
-                    </div>
-                </div>
-
-                <!-- Node.js -->
-                <div class="tech-card" data-category="backend">
-                    <div class="tech-logo">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
-                            alt="Node.js">
-                    </div>
-                    <h3>Node.js</h3>
-                    <div class="tech-info">
-                        <p>Construcción de APIs RESTful y aplicaciones en tiempo real.</p>
-                        <div class="tech-projects">Usado en 12 proyectos</div>
                     </div>
                 </div>
 

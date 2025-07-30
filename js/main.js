@@ -34,11 +34,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     filterBtns.forEach(btn => {
         btn.addEventListener('click', function () {
-            // Remover active de todos los botones
-            filterBtns.forEach(btn => btn.classList.remove('active'));
-            // Agregar active al botón clickeado
-            this.classList.add('active');
 
+            filterBtns.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
             const filter = this.getAttribute('data-filter');
 
             techCards.forEach(card => {
@@ -50,4 +48,45 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     });
+
+    const canvas = document.getElementById('matrix-bg');
+    const ctx = canvas.getContext('2d');
+    let width = window.innerWidth;
+    let height = window.innerHeight;
+    canvas.width = width;
+    canvas.height = height;
+
+    const letters = "01<>[]{};:|/\\=+-_#@$%&";
+    const fontSize = 18;
+    const columns = Math.floor(width / fontSize);
+    const drops = Array(columns).fill(1);
+
+    function drawMatrix() {
+        ctx.fillStyle = "rgba(1,36,86,0.13)";
+        ctx.fillRect(0, 0, width, height);
+        ctx.font = fontSize + "px monospace";
+        ctx.fillStyle = "#00ffea";
+        for (let i = 0; i < drops.length; i++) {
+            const text = letters[Math.floor(Math.random() * letters.length)];
+            ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+            if (drops[i] * fontSize > height && Math.random() > 0.975) {
+                drops[i] = 0;
+            }
+            drops[i]++;
+        }
+    }
+    setInterval(drawMatrix, 50);
+    window.addEventListener('resize', () => {
+        width = window.innerWidth;
+        height = window.innerHeight;
+        canvas.width = width;
+        canvas.height = height;
+    });
+
+    baffle('#coder-name').set({
+        characters: '░▒▓█<>/\\|',
+        speed: 60
+    }).start().reveal(5000);
+
+
 });
