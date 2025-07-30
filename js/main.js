@@ -88,5 +88,8 @@ document.addEventListener('DOMContentLoaded', function () {
         speed: 60
     }).start().reveal(5000);
 
-
+    $.each($('a.disabled'), function (index, value) {
+        $(this).css('pointer-events', 'none');
+        $(this).css('cursor', 'not-allowed');
+    });
 });
