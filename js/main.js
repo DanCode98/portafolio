@@ -117,4 +117,5 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
 });
