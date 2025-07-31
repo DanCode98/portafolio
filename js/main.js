@@ -92,4 +92,29 @@ document.addEventListener('DOMContentLoaded', function () {
         $(this).css('pointer-events', 'none');
         $(this).css('cursor', 'not-allowed');
     });
+
+
+    const certificationCards = document.querySelectorAll('.certification-card');
+
+    certificationCards.forEach(card => {
+        const header = card.querySelector('.certification-header');
+
+        header.addEventListener('click', function () {
+            certificationCards.forEach(otherCard => {
+                if (otherCard !== card && otherCard.classList.contains('active')) {
+                    otherCard.classList.remove('active');
+                    otherCard.querySelector('.certification-details').style.maxHeight = null;
+                }
+            });
+
+            card.classList.toggle('active');
+            const details = card.querySelector('.certification-details');
+
+            if (card.classList.contains('active')) {
+                details.style.maxHeight = details.scrollHeight + 'px';
+            } else {
+                details.style.maxHeight = null;
+            }
+        });
+    });
 });
