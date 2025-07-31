@@ -118,4 +118,36 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
     document.getElementById('footer-year').textContent = new Date().getFullYear();
+    const toggle = document.getElementById('dark-mode-toggle');
+    const icon = toggle.querySelector('i');
+    if (localStorage.getItem('dark-mode') === 'true') {
+        document.body.classList.add('dark-mode');
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+    }
+    toggle.addEventListener('click', function () {
+        document.body.classList.toggle('dark-mode');
+        const isDark = document.body.classList.contains('dark-mode');
+        icon.classList.toggle('fa-moon', !isDark);
+        icon.classList.toggle('fa-sun', isDark);
+        localStorage.setItem('dark-mode', isDark);
+    });
+
+    const animatedEls = document.querySelectorAll('.hero-content, .about-img, .about-text, .project-card, .certification-card, .stack-category, .tech-card');
+    animatedEls.forEach((el, i) => {
+        el.style.opacity = 0;
+        setTimeout(() => {
+            el.style.opacity = 1;
+        }, 200 + i * 120);
+    });
+
+    // Menú hamburguesa
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-links');
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', function () {
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('open');
+        });
+    }
 });
