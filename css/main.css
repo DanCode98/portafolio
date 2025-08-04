@@ -350,24 +350,29 @@ nav {
     margin-right: 0.3rem;
 }
 
+.darkmode-toggle-container {
+    display: flex;
+    align-items: center;
+    margin-left: 1.5rem;
+}
+
 #dark-mode-toggle {
-    position: fixed;
-    top: 1.2rem;
-    right: 1.5rem;
-    z-index: 2000;
     background: var(--secondary-color);
     color: #091426;
     border: none;
-    border-radius: 50%;
-    width: 48px;
-    height: 48px;
-    font-size: 1.5rem;
+    border-radius: 0.5rem;
+    width: 44px;
+    height: 44px;
+    font-size: 1.4rem;
     box-shadow: var(--shadow);
     cursor: pointer;
     transition: background var(--transition), color var(--transition), transform var(--transition);
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 0;
+    position: static;
+    z-index: 1102;
 }
 
 #dark-mode-toggle:hover {
@@ -376,31 +381,26 @@ nav {
     transform: scale(1.1) rotate(-10deg);
 }
 
-.nav-links .darkmode-mobile {
-    display: none;
-}
-
-/* Muestra el botón solo en móvil dentro del menú */
+/* Responsive: coloca el botón junto al menú hamburguesa en móvil */
 @media (max-width: 768px) {
+    nav {
+        position: relative;
+    }
+
+    .hamburger {
+        position: absolute;
+        right: 60px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1100;
+    }
+
     #dark-mode-toggle {
-        position: static;
-        margin-left: 0;
-        margin-top: 1.5rem;
-        width: 48px;
-        height: 48px;
-    }
-
-    .nav-links .darkmode-mobile {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-    }
-}
-
-/* Oculta el botón flotante en móvil */
-@media (max-width: 768px) {
-    body #dark-mode-toggle:not(.nav-links .darkmode-mobile #dark-mode-toggle) {
-        display: none !important;
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1101;
     }
 }
 
